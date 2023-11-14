@@ -32,13 +32,93 @@
 
 
 
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
+// import App from './App.jsx'
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+// )
+
+
+
+
+
+
+// we will try to invoke and render function and objects inside react and check which way is valid and invalid
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
+
+// first we will try to render a function which returns jsx
+
+// function MyApp() {
+//   return (
+//     <div>
+//     <h1>My App hello My App</h1>
+//     </div>
+//   )
+// }
+
+
+// Above code is running correctly 
+
+// now we will try to run our custom code which we run successfully into the customReact
+
+// const ReactElement = {
+//   type : "a",
+//   props : {
+//       href : "https://google.com",       
+//       target : "_blank"
+//   },
+//   children : "Click me to visit Google"
+// }
+
+
+// above code will not run because internal conversion is not possible in this way
+// in custome react we have written saperate conversion code for this which can not matched with internal conversion
+
+
+// we will see another way of rendering 
+
+// const anotherElement = (
+//   <a href= "https://google.com" target = "_blank" >Visit Google</a>
+// )
+
+
+// above code will work because its conversion is possible
+
+
+
+// using predefined syntax
+
+// const predefinedSyntax = React.createElement(
+//   "a",
+//   {
+//     href : "https://google.com",       
+//     target : "_blank"
+//   },
+//   "Click here to visit google"
+// )
+
+
+// in above code we are using createElement() function of React
+// it takes 3 parameter (type, object of tags attribute, text or inner html)
+
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+// <MyApp/>
+// -------or we can call function directly---------------
+// MyApp()  // not a good practice
+
+// <ReactElement/>   // running this is not possible
+
+// anotherElement   // we will be able to render it directly
+
+// predefinedSyntax  // we will be able to render it directly
 )
