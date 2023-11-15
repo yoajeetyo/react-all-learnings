@@ -49,8 +49,8 @@
 
 // we will try to invoke and render function and objects inside react and check which way is valid and invalid
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
 
 
 // first we will try to render a function which returns jsx
@@ -111,7 +111,7 @@ import ReactDOM from 'react-dom/client'
 
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// ReactDOM.createRoot(document.getElementById('root')).render(
 // <MyApp/>
 // -------or we can call function directly---------------
 // MyApp()  // not a good practice
@@ -121,4 +121,59 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 // anotherElement   // we will be able to render it directly
 
 // predefinedSyntax  // we will be able to render it directly
+// )
+
+
+
+
+
+
+
+
+// injecting javascript inside jsx in App.jsx
+
+
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
+// import App from './App.jsx'
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+// )
+
+
+
+
+// we will understand here why we were not able to write the if else or for loops inside {}  in App.jsx
+// because internally in react it is converted into object and we can not pass if else statement or loops inside object
+// when we take any other variable we will pass 4th parameter in createElement() function, it will show as text in html
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+const webPage = " Google"
+
+const predefinedSyntax = React.createElement(
+  "a",
+  {
+    href : "https://google.com",       
+    target : "_blank"
+  },
+  "Click here to visit",
+  webPage
 )
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  predefinedSyntax
+)
+
+
+
+// internal conversion done by babel (transpiler)
+
+
+
+
+
